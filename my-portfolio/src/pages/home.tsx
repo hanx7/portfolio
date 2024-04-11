@@ -10,7 +10,7 @@ function HomePage() {
         <section className="my-8 flex flex-col items-center justify-center">
             <ResponsiveAppBar pages={["About me","Contact me"]}></ResponsiveAppBar>
             <h1 className="mb-4 text-[2rem] md:text-[4rem]">
-                <MotionText delayOffset={0}>Hello World👋</MotionText>
+                <MotionText delayOffset={0}>Hello Penguin👋</MotionText>
             </h1>
             <div className="overflow-hidden rounded-full p-3 md:p-4">
                 <MotionDiv>
