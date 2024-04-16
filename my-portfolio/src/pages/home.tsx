@@ -4,10 +4,11 @@ import '../App';
 import MotionText from ".././components/motion-text";
 import MotionDiv from ".././components/motion-div";
 import ResponsiveAppBar from "../components/navigation-bar";
+import Skills from "../components/skills"
 
 function HomePage() {
     return (
-        <section className="my-8 flex flex-col items-center justify-center">
+        <section className="mb-8 flex flex-col items-center justify-center">
             <ResponsiveAppBar pages={["About me","Contact me"]}></ResponsiveAppBar>
             <h1 className="mb-4 text-[2rem] md:text-[4rem]">
                 <MotionText delayOffset={0}>Hello Penguin👋</MotionText>
@@ -45,6 +46,7 @@ function HomePage() {
             </div>
             <div className="my-8">
                 {/*<ContactList delayOffset={1.45} showWhenInView={false}/>*/}
+                <Skills></Skills>
             </div>
         </section>
 
