@@ -8,7 +8,7 @@ import Skills from "../components/skills"
 
 function HomePage() {
     return (
-        <section className="mb-0 flex flex-col items-center justify-center bg-[#0b0d26]">
+        <section className="mb-0 flex flex-col items-center bg-[#0b0d26]">
             <ResponsiveAppBar pages={["About me","Contact me"]}></ResponsiveAppBar>
             <h1 className="mb-4 text-[2rem] md:text-[4rem] text-white">
                 <MotionText delayOffset={0}>Hello Penguin👋</MotionText>

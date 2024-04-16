@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import {useHistory} from 'react-router-dom';
+
 
 interface NavigationBarProps {
     pages: string[];
@@ -31,15 +33,33 @@ function ResponsiveAppBar({
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElUser(event.currentTarget);
     };
+    const history = useHistory();
 
-    const handleCloseNavMenu = () => {
+    const navigateToPage = (message: string) => {
+        console.log(message); // Do something with the message if needed
+        if (message == "Contact me") {
+            history.push("/contact");
+        } else if ( message == "About me" ){
+            console.log("about me");
+            history.push("/");
+        }
         setAnchorElNav(null);
     };
+
+    const handleCloseNavMenu = () => {
+        console.log("here handleCloseNavMenu")
+        setAnchorElNav(null);
+    };
+
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
 
+
+
+
+    // @ts-ignore
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -100,29 +120,14 @@ function ResponsiveAppBar({
                         </Menu>
                     </Box>
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => {
+                                    console.log("test"); // Log "test"
+                                    navigateToPage(page); // Call handleCloseNavMenu
+                                }}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
@@ -130,35 +135,7 @@ function ResponsiveAppBar({
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings" open={!!settings}>
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser) && !!settings}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings?.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
+
                 </Toolbar>
             </Container>
         </AppBar>

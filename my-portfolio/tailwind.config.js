@@ -16,6 +16,11 @@ module.exports = {
       },
     },
     extend: {
+      extend: {
+        backgroundImage: {
+          'background': "url('../public/background.jpeg')",
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
