@@ -1,7 +1,11 @@
 import React from 'react';
 // import './App.css';
-import { Grid, TextField, Button, Card, CardContent, Typography } from '@material-ui/core';
-
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 function ContaceMeForm() {
 
@@ -9,7 +13,7 @@ function ContaceMeForm() {
     return (
         <div className="App">
             <Typography gutterBottom variant="h3" align="center">
-                React-App
+                contact me
             </Typography>
             <Grid>
                 <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
