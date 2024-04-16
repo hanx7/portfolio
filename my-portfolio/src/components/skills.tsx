@@ -13,6 +13,7 @@ import nodejsIcon from ".././asset/icons/nodejs.png";
 import expressjsIcon from ".././asset/icons/express-js.png";
 import postgresIcon from ".././asset/icons/postgres.png";
 import gitIcon from ".././asset/icons/git.png";
+import awsIcon from ".././asset/icons/awsIcon.png";
 
 import githubActionsIcon from "../asset/icons/github-actions.png";
 export default function skills() {
@@ -80,6 +81,10 @@ export default function skills() {
         {
           name: "GitHub Actions",
           icon: githubActionsIcon,
+        },
+        {
+          name: "AWS",
+          icon: awsIcon,
         },
       ],
     },
