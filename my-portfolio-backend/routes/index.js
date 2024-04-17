@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
-const app= express();
 
 mongoose.connect('mongodb://localhost:27017/portfolio')
   .then( r => console.log("connected success"+r) )

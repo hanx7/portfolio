@@ -8,6 +8,7 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var messageRouter = require("./routes/message");
 
 var app = express();
 
@@ -31,8 +32,11 @@ MongoClient.connect(url, function(err, db) {
   db.close();
 })
 
+//Endpoints
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/message', messageRouter);
+
 
 
 // catch 404 and forward to error handler

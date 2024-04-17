@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import axios from 'axios';
+import {sendMessageRequest} from "../networking/message";
 
 function ContaceMeForm() {
 
@@ -17,27 +18,11 @@ function ContaceMeForm() {
 
     const submit =  (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
-        console.log(firstName);
-        console.log(lastName);
-        console.log(message);
-        axios.post("http://localhost:8888/sendMessages", { firstName, lastName, message})
+        sendMessageRequest ( firstName, lastName, message )
             .then( (r) => {console.log(r);} )
             .catch( (error) => {console.log(error);})
 
     }
-    //
-    // return (
-    //     <Button type="submit" variant="contained" color="primary" fullWidth
-    //                                         onClick={ () =>{
-    //                                             console.log("submit");
-    //                                             submit();
-    //                                         }}
-    //                                 >
-    //                                     Submit
-    //                                 </Button>
-    //
-    // )
-
 
 
     return (
