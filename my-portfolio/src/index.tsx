@@ -9,6 +9,7 @@ import {Route, BrowserRouter, Switch} from 'react-router-dom';
 export const subPath = {
     home: '/',
     contact: '/contact',
+    test: '/test'
 };
 
 const root = ReactDOM.createRoot(
@@ -22,6 +23,7 @@ root.render(
                 <Switch>
                     <Route path={subPath.home} exact component={HomePage} />
                     <Route path={subPath.contact} exact component={ContactPage} />
+                    {/*<Route path={subPath.test} exact component={TestPage} />*/}
                 </Switch>
             </BrowserRouter>
         </div>
